@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>IDS Terminal Access</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-body">
+
+  <canvas id="matrix"></canvas>
+  <div class="overlay"></div>
+
+  <!-- 🔐 LOGIN CARD -->
+  <div class="login-container">
+
+    <div class="logo">🛡️</div>
+
+    <!-- 🔥 GLITCH TITLE -->
+    <h2 class="glitch" data-text="IDS Secure Login">
+      IDS Secure Login
+    </h2>
+
+    <!-- ⌨️ typing -->
+    <p class="subtitle">
+      <span id="typing-text"></span><span class="cursor">|</span>
+    </p>
+
+    <form onsubmit="event.preventDefault(); login();">
+
+      <input type="text" id="username" placeholder="Username" required>
+
+      <div class="password-box">
+        <input type="password" id="password" placeholder="Password" required>
+        <span class="toggle-password" onclick="togglePassword()">👁️</span>
+      </div>
+
+      <button id="login-btn" type="submit">
+        <span class="btn-text">Login</span>
+        <span class="spinner"></span>
+      </button>
+
+    </form>
+
+    <p id="error" class="error"></p>
+
+  </div>
+
+  <!-- 🖥️ TERMINAL OUTPUT -->
+  <div id="terminal"></div>
+
+  <script src="login.js"></script>
+</body>
+</html>

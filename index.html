@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IDS Dashboard</title>
+
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/565/565547.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="index.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+
+<body>
+
+  <!-- 🌍 BACKGROUND -->
+  <div class="dashboard-bg"></div>
+
+  <div class="dashboard">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div>
+          <h1>🚨 Intrusion Detection Dashboard</h1>
+          <p class="subtitle">Real-time threat monitoring system</p>
+        </div>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+      </div>
+
+    <!-- STATS -->
+    <div class="stats">
+
+        <div class="box">
+          <h3>Total Attacks</h3>
+          <p id="total">0</p>
+        </div>
+      
+        <div class="box">
+          <h3>Unique IPs</h3>
+          <p id="unique">0</p>
+        </div>
+      
+        <div class="box">
+          <h3>Top IP</h3>
+          <p id="top">0.0.0.0</p>
+        </div>
+      
+      </div>
+
+    <!-- CHART -->
+    <div class="card">
+      <h2>📊 Attack Analytics</h2>
+      <canvas id="chart"></canvas>
+    </div>
+
+    <!-- MAP -->
+    <div class="card">
+      <h2>🌍 Attack Map</h2>
+      <div id="map"></div>
+    </div>
+
+    <!-- ALERTS -->
+    <div class="card">
+      <h2>📡 Recent Alerts</h2>
+      <div id="alerts"></div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

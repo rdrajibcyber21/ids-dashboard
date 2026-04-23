@@ -1,0 +1,186 @@
+/* 🌌 BASE */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: black;
+  }
+  
+  /* 🌍 BACKGROUND */
+  .dashboard-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  
+    background:
+      linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)),
+      url("bg.png");
+  
+    background-size: cover;
+    background-position: center;
+  
+    z-index: 0;
+  }
+  
+  /* 📦 MAIN (FIXED WIDTH + CENTERED) */
+  .dashboard {
+    position: relative;
+    z-index: 1;
+  
+    max-width: 1100px;   /* 🔥 controls size */
+    margin: 0 auto;      /* 🔥 center */
+  
+    padding: 20px;
+    color: white;
+  }
+  
+  /* 🔥 HEADER */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+  
+  .header h1 {
+    font-size: 28px;
+    color: #00ff9c;
+    text-shadow: 0 0 15px #00ff9c;
+  }
+  
+  .subtitle {
+    margin-top: 5px;
+    font-size: 14px;
+    opacity: 0.6;
+  }
+  
+  /* 🔐 LOGOUT */
+  .logout-btn {
+    background: linear-gradient(135deg, #ff4d4f, #ff0000);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .logout-btn:hover {
+    box-shadow: 0 0 15px red;
+    transform: scale(1.05);
+  }
+  
+  /* 📊 STATS */
+  .stats {
+    display: flex;
+    gap: 12px;
+    margin: 20px 0;
+  }
+  
+  /* 💎 STAT BOX */
+  .box {
+    flex: 1;
+    padding: 15px;
+    border-radius: 15px;
+  
+    background: rgba(0, 20, 10, 0.4);
+    backdrop-filter: blur(10px);
+  
+    border: 1px solid rgba(0,255,150,0.2);
+  
+    box-shadow:
+      0 0 15px rgba(0,255,150,0.1),
+      inset 0 0 10px rgba(0,255,150,0.05);
+  
+    transition: 0.3s;
+  
+    animation: pulseGlow 3s infinite;
+  }
+  
+  .box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(0,255,150,0.3);
+  }
+  
+  .box h3 {
+    font-size: 14px;
+    opacity: 0.6;
+    margin-bottom: 8px;
+  }
+  
+  .box p {
+    font-size: 20px;   /* 🔥 reduced */
+    font-weight: bold;
+    color: #00ff9c;
+  }
+  
+  /* 📦 CARD */
+  .card {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 20px;
+  
+    background: rgba(0, 20, 10, 0.45);
+    backdrop-filter: blur(12px);
+  
+    border: 1px solid rgba(0,255,150,0.2);
+  
+    box-shadow:
+      0 0 20px rgba(0,255,150,0.15),
+      0 0 60px rgba(0,255,150,0.05);
+  
+    position: relative;
+  }
+  
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    border: 1px solid rgba(0,255,150,0.2);
+    box-shadow: 0 0 25px rgba(0,255,150,0.15);
+    pointer-events: none;
+  }
+  
+  /* 📊 CHART */
+  canvas {
+    margin-top: 15px;
+    max-height: 300px;   /* 🔥 FIX BIG SIZE */
+  }
+  
+  /* 🌍 MAP */
+  #map {
+    height: 350px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  /* 📡 ALERTS */
+  #alerts {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .alert {
+    padding: 10px;
+    border-bottom: 1px solid rgba(0,255,150,0.1);
+  }
+  
+  /* ✨ SCROLLBAR */
+  #alerts::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  #alerts::-webkit-scrollbar-thumb {
+    background: #00ff9c;
+    border-radius: 10px;
+  }
+  
+  /* ✨ ANIMATION */
+  @keyframes pulseGlow {
+    0% { box-shadow: 0 0 10px rgba(0,255,150,0.1); }
+    50% { box-shadow: 0 0 25px rgba(0,255,150,0.4); }
+    100% { box-shadow: 0 0 10px rgba(0,255,150,0.1); }
+  }
